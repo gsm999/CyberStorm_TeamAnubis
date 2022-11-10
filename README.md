@@ -4,9 +4,7 @@
 Every code is assumed to run on Linux Mint Enviroment.
 
 # [Vigenere] 
-- people in charge for Cyberstorm: Abigail Folds, Seonghoon Yi
-- Code Author: Abigail Folds
-- file name: CSC442_Ven.py
+
 
 
 
