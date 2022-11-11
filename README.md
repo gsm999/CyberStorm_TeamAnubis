@@ -46,5 +46,42 @@ yourid@servername:~$ python3 CSC442_Ven.py -d "This is my key" < ciphertext.txt
 then the reuslt will be printed on the prompt.
 
 
+# [Timelock]
+
+## general info
+- people in charge for Cyberstorm: Abigail Folds, Seonghoon Yi
+- Code Author: Abigail Folds
+- file name: timelock.py
 
 
+## example
+
+You can do this program by commandline, which would look like this:
+
+```bash
+yourid@servername:~$ echo "1999 12 31 23 59 59" | python timelock.py
+```
+
+This will work perfectly fine, But as you have to manually change the system time manually anyway, I would suggest turning DEBUG on and manually filling in the epoch and system time.
+
+This would look like this.
+
+```bash
+DEBUG = True
+
+#getting epochtime
+if DEBUG == False:
+    epochtime = datetime.datetime.strptime(sys.stdin.read().strip('" \n'), "%Y %m %d %H %M %S").timestamp()
+else:
+    epochtime = datetime.datetime(2022, 10, 4, 23, 59, 59).timestamp()
+
+#getting systemtime time
+systime = datetime.datetime(2013, 5, 6, 7, 43, 25).timestamp()
+if DEBUG == True: print(epochtime)
+
+#calculating the time elasped
+timeelp = systime - epochtime
+div = (timeelp//60) * 60
+```
+
+The printed result will have the 4 digit code.
